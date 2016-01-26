@@ -37,5 +37,21 @@
 ;; List: conj
 
 (defn no5
-  [x]
-  (= x (or (conj '(2 3 4) 1) (conj '(3 4) 2 1))))
+  [& args]
+  (= (lazy-seq args) (or (conj '(2 3 4) 1) (conj '(3 4) 2 1))))
+
+;; Problem 6
+;; Elementary
+;; Intro to Vectors
+
+(defn no6
+  [& args]
+  (= (into [] args) (list :a :b :c) (vec '(:a :b :c)) (vector :a :b :c)))
+
+;; Problem 7
+;; Elementary
+;; Vectors: conj
+
+(defn no7
+  [& args]
+  (= (into [] args) (or (conj [1 2 3] 4) (conj [1 2] 3 4))))
